@@ -9,6 +9,8 @@ import { MoviesController } from './movies.controller'
     providers: [MoviesService],
     imports: [
         TypeOrmModule.forFeature([Movies], 'db_read'),
+        TypeOrmModule.forFeature([Movies], 'db_write'),
+
     ],
     exports: [MoviesService],
 })

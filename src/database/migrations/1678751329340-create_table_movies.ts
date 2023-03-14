@@ -36,6 +36,11 @@ const table = new Table({
             isNullable: true,
         },
         {
+            name: 'realeaseYear',
+            type: 'varchar(4)',
+            isNullable: true,
+        },
+        {
             name: 'createdAt',
             type: 'datetime',
             isNullable: false,

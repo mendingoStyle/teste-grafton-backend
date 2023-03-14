@@ -19,6 +19,5 @@ async function bootstrap() {
 }
 
 bootstrap().then((app: INestApplication) => {
-  process.env.NODE_ENV === 'production'
   generateSwaggerHtml(app)
 })

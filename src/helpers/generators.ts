@@ -28,11 +28,9 @@ function writeSwaggerFile(
 export async function generateSwaggerHtml(app: INestApplication) {
   const options = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('Now')
+    .setTitle('Teste')
     .setDescription(
-      '<div><b>Rotas da aplicação do back-end</b></div>' +
-        '<br><div><i><font size="3">As rotas que possuirem o <font color="green">* verde</font> na descrição podem ser feito a requisição com seus parâmetros como arrays(em forma de query params), mandando vários valores com uma mesma key(nome do campo). Ou como objeto key[min] ou key[max], utilizar ambos para um range específico.' +
-        ' Ainda nas rotas com o <font color="green">* verde</font>, para fazer uma pesquisa "like", ou seja buscar todo itens que contém uma informação, mandar como search[key]. E para mandar ordenações customizadas mandar o objeto com a key "sorters" igualando a o nome da tabela que deseja ordenar, para ordenação crescente exemplo: ?sorters=createdAt, para ordenar decrescente ?sorters=-createdAt  </font></i></div></br> ',
+      '<div><b>Rotas da aplicação do back-end</b></div>'
     )
     .setVersion(version)
     .addServer(process.env.NODE_ENV === 'production' ? '/acessible-api' : '/')
