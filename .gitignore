@@ -1,0 +1,11 @@
+node_modules
+dist
+tmp
+.env
+__tests__/coverage
+jsonAuxiliares.json
+filesUpload
+/data
+/files
+drlive-decrypted.key
+drlive.crt
