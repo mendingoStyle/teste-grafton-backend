@@ -17,7 +17,7 @@ export class MoviesService {
 
     async importDate(query: PaginationPayloadDto) {
         try {
-            const imp = await axios.get(process.env.API_MOVIES + `?page=${query.page > 0 ? query.page : 1}&limit=${query.limit}&year=2000`, {
+            const imp = await axios.get(process.env.API_MOVIES + `?page=${query.page > 0 ? query.page : 1}&limit=${query.limit}&year=2006`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'X-RapidAPI-Host': process.env.XRAPIDAPIHOST,
@@ -34,6 +34,7 @@ export class MoviesService {
                     realeaseYear: imp?.data?.results[i]?.releaseYear?.year
                 })
             }
+            console.log(imp?.data?.results?.length)
             await this.repoWrite.save(formatSave)
         } catch (e) {
             console.log(e)
@@ -41,6 +42,7 @@ export class MoviesService {
     }
 
     async findMany(query: MoviesGetPayloadDto) {
+
         const [result, count] = await this.repoRead
             .createQueryBuilder()
             .take(query.limit)
